@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wild-bat"
+version = "0.1.0"
+description = "An in-memory incident and recovery simulator for security education"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [{name = "Quentin Mayo"}]
+dependencies = []
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Education",
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+]
+
+[project.scripts]
+wild-bat = "wild_bat.cli:main"
+
+[project.urls]
+Repository = "https://github.com/quentinmayo/Simple-Crypto-Locker"
+Issues = "https://github.com/quentinmayo/Simple-Crypto-Locker/issues"
+
+[tool.setuptools.packages.find]
+include = ["wild_bat*"]

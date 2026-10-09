@@ -1,4 +1,9 @@
-from Crypto.PublicKey import RSA
-RSA_ = RSA.generate(2048)
-print RSA_.publickey().exportKey()
-print RSA_.exportKey()
+"""Compatibility entry point for the Wild Bat regression suite."""
+
+from pathlib import Path
+import unittest
+
+if __name__ == "__main__":
+    suite = unittest.defaultTestLoader.discover(str(Path(__file__).parent / "tests"))
+    result = unittest.TextTestRunner(verbosity=2).run(suite)
+    raise SystemExit(0 if result.wasSuccessful() else 1)
